@@ -26,7 +26,7 @@ Route::post('/register/login', function(Request $request) {
 
 Route::get('/dashboard', function(){
     return view("dashboard");
-});
+})->middleware('auth'); 
 
 Route::get('/facebook/redirect', [UserController::class, 'facebookRedirect']);
 Route::get('/facebook/callback', [UserController::class, 'facebookCallback']);
